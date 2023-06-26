@@ -1,0 +1,10 @@
+.content {
+    z-index: 1;
+    min-height: calc(100vh - 84px);
+    display: flex;
+    flex-direction: column;
+}
+
+.childrenContainer {
+    flex: 1;
+}

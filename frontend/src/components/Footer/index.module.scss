@@ -1,0 +1,18 @@
+@import "../../common/styles/variables.module.scss";
+
+.container {
+    background-color: $dark-background;
+    height: 86px;
+    padding: 32px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.questions, .about {
+    color: $font-color-light;
+    font-size: 20px;
+}

@@ -1,0 +1,60 @@
+@import "../../styles/variables.module.scss";
+
+.container {
+    border: none;
+    background: transparent;
+    height: 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.dialogContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.acceptButton {
+    background-color: $primary-button-bg;
+    color: $primary-button-color;
+    border: $primary-button-bg;
+}
+
+.declineButton {
+    background-color: $light-background;
+    color: $primary-button-bg;
+    border: 1px solid $primary-button-bg;
+}
+
+.acceptButton,
+.declineButton {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0 16px;
+    border-radius: 8px;
+    height: 40px;
+
+
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "prettier",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "prettier/prettier": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "@typescript-eslint/no-empty-function": "off"
+  }
+}

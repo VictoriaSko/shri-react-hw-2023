@@ -1,0 +1,27 @@
+@import "../../../styles/variables.module.scss";
+
+.container {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    background-color: $primary-button-bg;
+    border-radius: 4px;
+    
+    display: flex;
+    border: none;
+
+    &.isDisabled {
+        background-color: $primary-button-bg-disabled;
+        cursor: initial;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+}

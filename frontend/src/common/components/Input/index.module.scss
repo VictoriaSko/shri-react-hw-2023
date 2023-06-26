@@ -1,0 +1,65 @@
+@import "../../styles/variables.module.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.labelContainer {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.inputContainer {
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid $input-border;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $font-color-dark;
+
+    &:focus-visible {
+        outline: none;
+        border-color: $input-border-active;
+    }
+
+    &::placeholder {
+        color: $placeholder-font-color;
+    }
+
+    &.readOnly {
+        &:hover {
+            cursor: pointer;
+        }
+
+        &::placeholder {
+            color: $placeholder-font-color;
+        }
+
+        &:focus-visible {
+            outline: none;
+            border-color: $input-border;
+        }
+
+        &.isFocused {
+            &::placeholder {
+                color: $font-color-dark;
+            }
+
+            border-color: $input-border-active;
+        }
+    }
+}
+
+.iconContainer {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+}

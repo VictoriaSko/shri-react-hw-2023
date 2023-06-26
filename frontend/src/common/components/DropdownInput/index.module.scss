@@ -1,0 +1,49 @@
+@import "../../styles/variables.module.scss";
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.itemsContainer {
+    top: var(--top);
+    left: var(--left);
+    width: var(--width);
+    position: absolute;
+    border-radius: 8px;
+    border: 1px solid $light-background;
+    background: $light-background;
+
+    box-shadow: 0px 10px 22px -4px rgba(27, 31, 35, 0.12);
+    padding: 8px;
+
+    animation-name: fade-in;
+    animation-duration: 0.4s;
+}
+
+.itemContainer {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 20px;
+
+    &:hover {
+        cursor: pointer;
+        border-radius: 8px;
+        background-color: $hover-color;
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+
+    &.isOpen {
+        transform: rotate(180deg);
+    }
+}

@@ -1,0 +1,21 @@
+@import "../../common/styles/variables.module.scss";
+
+.container {
+    background-color: $dark-background;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 24px 32px;
+    z-index: 3;
+    height: 84px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    color: $font-color-light;
+}

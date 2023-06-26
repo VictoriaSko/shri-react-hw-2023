@@ -1,0 +1,27 @@
+@import "../../../common/styles/variables.module.scss";
+
+.container {
+    position: sticky;
+    top: 108px;
+    background-color: $light-background;
+    padding: 24px;
+    border-radius: 8px;
+    max-height: calc(100vh - 108px);
+    min-height: calc(100vh - 216px);
+    height: calc(Min(100vh, var(--top-offset)) - 108px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

@@ -1,0 +1,23 @@
+@import '../../common/styles/variables.module.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    display: flex;
+    padding: 24px;
+    align-items: flex-start;
+    background-color: $light-background;
+    border-radius: 8px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info {
+    font-size: 20px;
+    line-height: 24px;
+}

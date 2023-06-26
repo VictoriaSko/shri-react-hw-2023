@@ -1,0 +1,16 @@
+@import "../../../common/styles/variables.module.scss";
+
+.container {
+    background: $primary-button-bg;
+    color: $primary-button-color;
+    padding: 4px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    line-height: 20px;
+
+    min-width: 28px;
+    height: 28px;
+}

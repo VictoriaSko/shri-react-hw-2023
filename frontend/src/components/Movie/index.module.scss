@@ -1,0 +1,94 @@
+@import "../../common/styles/variables.module.scss";
+
+.container {
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: calc(100vh - 170px);
+
+    &.isLoading {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.movieContainer {
+    padding: 24px;
+    background-color: $light-background;
+    border-radius: 8px;
+    display: grid;
+    gap: 32px 32px;
+    grid-template-areas:
+        "image title"
+        "image info"
+        "image description";
+    grid-template-rows: 32px 144px 144px;
+    height: 553px;
+}
+
+.titleContainer {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    grid-area: title;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+}
+
+.movieInfo {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.descriptionContainer {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+
+    .value {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.posterImage {
+    border-radius: 8px;
+    grid-area: image;
+}
+
+.genreContainer,
+.yearContainer,
+.ratingContainer,
+.directorContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    .value {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
