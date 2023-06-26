@@ -13,7 +13,7 @@ export const movieApi = createApi({
         getMovieById: builder.query<Movie, string>({
             async queryFn(_arg, _queryApi, _extraOptions, fetchWithBQ) {
                 const movie = await fetchWithBQ(`movie?movieId=${_arg}`);
-                if (movie.error || !movie)
+                if (movie.error)
                     return { error: movie.error as FetchBaseQueryError };
                 const reviews = await fetchWithBQ(`reviews?movieId=${_arg}`);
                 return {
