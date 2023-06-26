@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import {
     selectCinemaFilter,
@@ -30,35 +30,28 @@ export const useMovies = (): MovieQueryResult => {
         selectCinemaFilter(state)
     );
 
-    const selectFromResult = useCallback(
-        ({ data, isLoading, error }: MovieQueryResult) => {
-            if (!data) return { data, isLoading, error };
-            let newData = [...data];
-            if (titleFilter) {
-                newData = newData.filter((movie) =>
-                    movie.title.startsWith(titleFilter)
-                );
-            }
-            if (genreFilter) {
-                newData = newData.filter(
-                    (movie) => movie.genre === genreFilter
-                );
-            }
-            return { data: newData, isLoading, error };
-        },
-        [genreFilter, titleFilter]
-    );
-
     const {
         data: moviesData,
         isLoading: isMoviesLoading,
         error: moviesError,
-    } = useGetMoviesByCinemaByIdQuery(cinemaFilter, {
-        selectFromResult,
-    });
+    } = useGetMoviesByCinemaByIdQuery(cinemaFilter);
+
+    const filteredData = useMemo(() => {
+        if (!moviesData) return moviesData;
+        let newData = [...moviesData];
+        if (titleFilter) {
+            newData = newData.filter((movie) =>
+                movie.title.startsWith(titleFilter)
+            );
+        }
+        if (genreFilter) {
+            newData = newData.filter((movie) => movie.genre === genreFilter);
+        }
+        return newData;
+    }, [genreFilter, moviesData, titleFilter]);
 
     return {
-        data: moviesData,
+        data: filteredData,
         isLoading: isMoviesLoading,
         error: moviesError,
     };
