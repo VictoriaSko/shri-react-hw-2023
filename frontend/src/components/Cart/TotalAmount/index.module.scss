@@ -1,0 +1,26 @@
+@import "../../../common/styles/variables.module.scss";
+
+.totalAmountContainer {
+    width: 100%;
+    padding: 24px;
+    height: 68px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 8px;
+    background: #FFF;
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+    .amount {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 20px;
+    }
+}

@@ -1,25 +1,22 @@
 'use client';
 
 import React, { FunctionComponent, useMemo } from 'react';
+import classNames from 'classnames';
+
+import Link from 'next/link';
 
 import { useMoviesInCart } from '@/lib/hooks/useMoviesInCart';
 
 import { MovieBlock } from '../Main/MovieBlock';
 
 import { Movie } from '@/common/const/movies';
-import { useSelector } from 'react-redux';
-import { ReduxStore } from '@/types/reduxStore';
-import { selectTotalAmount } from '@/lib/redux/features/cart/selector';
+
+import { Loader } from '@/common/components/Loader';
+import { TotalAmount } from './TotalAmount';
 
 import styles from './index.module.scss';
-import { Loader } from '@/common/components/Loader';
-import classNames from 'classnames';
-import Link from 'next/link';
 
 export const Cart: FunctionComponent = () => {
-    const totalAmount = useSelector((state: ReduxStore) =>
-        selectTotalAmount(state)
-    );
     const { data, isLoading, error } = useMoviesInCart();
 
     const items = useMemo(() => {
@@ -56,10 +53,7 @@ export const Cart: FunctionComponent = () => {
                             </span>
                         </div>
                     )}
-                    <div className={styles.totalAmountContainer}>
-                        <h2 className={styles.title}>Итого билетов:</h2>
-                        <span className={styles.amount}>{totalAmount}</span>
-                    </div>
+                    <TotalAmount />
                 </>
             )}
         </div>
